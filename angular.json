@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "mobile",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "./node_modules/@claviska/jquery-minicolors/jquery.minicolors.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/@claviska/jquery-minicolors/jquery.minicolors.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -63,12 +66,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.ts"
+          },
           "configurations": {
             "production": {
               "browserTarget": "hw-screen-layout:build:production"
             },
             "development": {
-              "browserTarget": "hw-screen-layout:build:development"
+              "browserTarget": "hw-screen-layout:build:development",
+              "host": "127.0.0.1",
+              "port": 9000,
+              "open": false
             }
           },
           "defaultConfiguration": "development"
@@ -78,27 +87,11 @@
           "options": {
             "browserTarget": "hw-screen-layout:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "less",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
-            "scripts": []
-          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

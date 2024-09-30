@@ -1,0 +1,22 @@
+<div class="screen-layout-element-content-image-details">
+  <div class="screen-layout-element-content-image-details-body hw-form-1">
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">上传图片</div>
+      <div class="hw-form-item-value"></div>
+    </div>
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">显示方式</div>
+      <div class="hw-form-item-value">
+        <select [(ngModel)]="data.ScaleType">
+          <option value="Center">居中</option>
+          <!-- <option value="CenterCrop">按比例居中</option> -->
+          <option value="CenterInside">按比例居中全部显示</option>
+          <option value="FitXY">拉伸全屏</option>
+          <!-- <option value="FitStart">拉伸置顶</option>
+          <option value="FitCenter">拉伸居中</option>
+          <option value="FitEnd">拉伸置底</option> -->
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

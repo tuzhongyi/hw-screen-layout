@@ -1,0 +1,20 @@
+.hw-panel {
+  padding: 20px;
+  background-color: rgba(36, 72, 165, 0.05);
+  border: 2px rgba(117, 134, 224, 0.15) solid;
+  box-sizing: border-box;
+  flex-grow: 0;
+  width: 20%;
+}
+.hw-panel.grow {
+  flex-grow: 1;
+}
+.hw-panel-head {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hw-panel-body {
+  height: calc(100% - 50px);
+}

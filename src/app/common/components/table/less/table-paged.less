@@ -1,0 +1,50 @@
+@import url(./table.less);
+
+.table {
+
+
+  &-body {
+    height: calc(100% - 50px);
+
+
+  }
+
+  &-foot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #7586e0;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    &-info {
+      display: flex;
+
+      &-item {
+        margin: 10px;
+        font-size: 14px;
+        color: #cfd7ff;
+      }
+    }
+
+  }
+
+  .loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+  }
+}

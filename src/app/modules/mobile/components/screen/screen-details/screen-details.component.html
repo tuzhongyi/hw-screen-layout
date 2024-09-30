@@ -1,0 +1,140 @@
+<div class="screen-details">
+  <div class="screen-details-head">
+    <div class="hw-simple-title">智能屏信息</div>
+  </div>
+  <div class="screen-details-body">
+    <div class="hw-form-1">
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">名称</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.Name" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">设备类型</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.DeviceType" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">设备型号</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.Model" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">设备序列号</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.SerialNumber" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">设备接入ID</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.AppId" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">设备接入密钥</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.AppSecret" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">接入Token</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.Token" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">接入Token过期时间</div>
+        <div class="hw-form-item-value">
+          <input
+            type="text"
+            DateTimePicker
+            [format]="Language.YearMonthDay"
+            [(date)]="date"
+          />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">分辨率</div>
+        <div class="hw-form-item-values">
+          <input type="text" [(ngModel)]="data.Resolution.Width" /> *
+          <input type="text" [(ngModel)]="data.Resolution.Height" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">旋转角度</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.Rotation" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">街道</div>
+        <div class="hw-form-item-value">
+          <level-division-panel></level-division-panel>
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">社区、门店</div>
+        <div class="hw-form-item-value">
+          <select></select>
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">地址</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.Address" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">音频输出设备</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.AudioDevice" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">操作系统</div>
+        <div class="hw-form-item-value">
+          <select [(ngModel)]="data.OSVersion">
+            <option value="Android14">Android14</option>
+            <option value="AndroidTV14">AndroidTV14</option>
+          </select>
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">屏幕品牌</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.ScreenVendor" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">联系人</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.ContractName" />
+        </div>
+      </div>
+      <div class="hw-form-item">
+        <div class="hw-form-item-title">联系电话</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="data.ContractPhone" />
+        </div>
+      </div>
+      <!-- <div class="hw-form-item">
+        <div class="hw-form-item-title">坐标</div>
+        <div class="hw-form-item-value">
+          <input type="text" [(ngModel)]="" />
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="screen-details-foot">
+    <button class="hw-green-btn" (click)="onok()">
+      <i class="mdi mdi-check"></i> 确定
+    </button>
+    <button class="hw-gray-btn" (click)="oncancel()">
+      <i class="mdi mdi-close"></i> 取消
+    </button>
+  </div>
+</div>

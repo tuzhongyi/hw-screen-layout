@@ -1,0 +1,16 @@
+<div class="screen-layout-element-types">
+  <ng-container *ngFor="let item of types">
+    <div
+      class="screen-layout-element-types-item"
+      [ngClass]="{ selected: selected === item }"
+      (click)="onselect(item)"
+    >
+      <div class="screen-layout-element-types-item-icon">
+        <i [class]="Icon.ScreenLayoutElementType(item)"></i>
+      </div>
+      <div class="screen-layout-element-types-item-name">
+        {{ Language.ScreenLayoutElementType(item) }}
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,47 @@
+<div class="screen-layout-manager">
+  <div class="screen-layout-manager-head">
+    <div class="hw-simple-title">屏幕布局</div>
+  </div>
+  <div class="screen-layout-manager-body">
+    <div class="hw-panel">
+      <mobile-screen-layout-list
+        [(selected)]="selected"
+      ></mobile-screen-layout-list>
+    </div>
+    <div class="hw-panel grow">
+      <div class="hw-panel-head">
+        <div class="hw-simple-title">布局编辑</div>
+        <div class="hw-operation">
+          <button class="hw-green-btn" (click)="oncreate()">
+            <i class="howell-icon-plus"></i> 添加
+          </button>
+        </div>
+      </div>
+      <div class="hw-panel-body">
+        <mobile-screen-layout-container
+          [data]="selected"
+        ></mobile-screen-layout-container>
+      </div>
+    </div>
+    <div class="hw-panel">
+      <mobile-screen-layout-details
+        [(data)]="selected"
+      ></mobile-screen-layout-details>
+    </div>
+  </div>
+  <div class="screen-layout-manager-foot">
+    <button class="hw-green-btn"><i class="mdi mdi-check"></i> 确定</button>
+    <button class="hw-gray-btn"><i class="mdi mdi-close"></i> 取消</button>
+  </div>
+</div>
+
+<app-window
+  *ngIf="window.element.show"
+  [Model]="window.element"
+  [style]="window.element.style"
+>
+  <mobile-screen-layout-element-manager
+    [layout]="selected"
+    [data]="window.element.data"
+  ></mobile-screen-layout-element-manager>
+</app-window>

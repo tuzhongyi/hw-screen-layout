@@ -1,0 +1,107 @@
+<div class="screen-layout-details">
+  <div class="screen-layout-details-head">
+    <div class="hw-simple-title">布局信息</div>
+  </div>
+  <div class="screen-layout-details-body hw-form-1" *ngIf="data">
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">布局名称</div>
+      <div class="hw-form-item-value">
+        <input type="text" [(ngModel)]="data.Name" />
+      </div>
+    </div>
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">总列数（纵向）</div>
+      <div class="hw-form-item-value">
+        <input type="text" [(ngModel)]="data.ColumnCount" />
+      </div>
+    </div>
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">总行数（横向）</div>
+      <div class="hw-form-item-value">
+        <input type="text" [(ngModel)]="data.RowCount" />
+      </div>
+    </div>
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">背景图片</div>
+      <div class="hw-form-item-value">
+        <upload-control [(path)]="path" (upload)="onupload($event)">
+          <div class="hw-input-button">
+            <div class="hw-input-button-prefix">
+              <div
+                class="hw-image"
+                [ngStyle]="{
+                  backgroundImage: data.BackgroundImageUrl | url
+                }"
+              ></div>
+            </div>
+            <div
+              class="hw-input-button-clear"
+              *ngIf="!!data.BackgroundImageUrl"
+              (click)="onuploadclear($event)"
+            >
+              <i class="howell-icon-Close"></i>
+            </div>
+            <input type="text" [value]="path ?? ''" />
+
+            <button class="hw-blue-btn">
+              <i class="howell-icon-picture"></i> 选择
+            </button>
+          </div>
+        </upload-control>
+      </div>
+    </div>
+    <div class="hw-form-item">
+      <div class="hw-form-item-title">背景颜色</div>
+      <div class="hw-form-item-value">
+        <color-control [(color)]="data.BackgroundColor">
+          <div class="hw-input-button">
+            <div class="hw-input-button-prefix">
+              <div
+                [ngStyle]="{
+                  backgroundColor: data.BackgroundColor
+                    ? Color.to.hex.rgb(data.BackgroundColor)
+                    : '#000'
+                }"
+              ></div>
+            </div>
+            <input
+              type="text"
+              [value]="
+                data.BackgroundColor
+                  ? Color.to.hex.rgb(data.BackgroundColor)
+                  : ''
+              "
+            /><button class="hw-blue-btn">
+              <i class="mdi mdi-palette"></i> 颜色
+            </button>
+          </div>
+        </color-control>
+      </div>
+    </div>
+    <div class="hw-form-item" *ngIf="data.BackgroundColor">
+      <div class="hw-form-item-title">背景颜色透明度</div>
+      <div class="hw-form-item-value">
+        <div class="hw-input-slider">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            [step]="0.01"
+            [(ngModel)]="data.BackgroundColor.alpha"
+          />
+
+          <input
+            type="number"
+            [min]="0"
+            [max]="1"
+            [step]="0.1"
+            [decimals]="2"
+            TouchSpin
+            [value]="data.BackgroundColor.alpha"
+            [(number)]="data.BackgroundColor.alpha"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

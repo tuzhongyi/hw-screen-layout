@@ -1,0 +1,26 @@
+<div class="app-account-operation">
+  <div class="operation-item" [matMenuTriggerFor]="menu">
+    <div class="log-out">
+      <i class="howell-icon-account"></i>
+    </div>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button mat-menu-item *ngIf="display.username">
+        <i class="howell-icon-account"></i>
+        {{ userName }}
+      </button>
+      <button mat-menu-item (click)="onlogout()" *ngIf="display.logout">
+        <i class="howell-icon-logout"> </i>
+        退出登录
+      </button>
+    </mat-menu>
+  </div>
+  <div class="operation-item" [matMenuTriggerFor]="menuHelp">
+    <mat-icon> help </mat-icon>
+    <mat-menu #menuHelp="matMenu">
+      <button mat-menu-item (click)="onhelp()">
+        <i class="mdi mdi-help-circle-outline" style="margin-right: 5px"></i>
+        帮助
+      </button>
+    </mat-menu>
+  </div>
+</div>

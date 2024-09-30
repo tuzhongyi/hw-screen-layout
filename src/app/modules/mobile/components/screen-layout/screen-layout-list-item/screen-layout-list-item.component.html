@@ -1,0 +1,23 @@
+<div class="screen-layout-list-item" [ngClass]="{ selected: selected }">
+  <div class="screen-layout-list-item-index">
+    <div class="screen-layout-list-item-index-number">{{ index + 1 }}</div>
+    <div>{{ data.Name }}</div>
+  </div>
+
+  <div class="screen-layout-list-item-content">
+    <div
+      [ngStyle]="{
+        backgroundColor: data.BackgroundColor,
+        backgroundImage: data.BackgroundImageUrl | url,
+        aspectRatio: data.ColumnCount + '/' + data.RowCount,
+        width: data.ColumnCount >= data.RowCount ? '100%' : 'min-content',
+        height: data.ColumnCount <= data.RowCount ? '100%' : 'min-content'
+      }"
+    ></div>
+  </div>
+  <div class="screen-layout-list-item-operation">
+    <div><i class="mdi mdi-content-copy"></i></div>
+    <div><i class="howell-icon-settingoutline"></i></div>
+    <div><i class="howell-icon-delete2"></i></div>
+  </div>
+</div>

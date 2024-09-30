@@ -1,0 +1,4 @@
+<div class="color-control" (click)="onclick($event)">
+  <input #input type="color" [(ngModel)]="color" (input)="onchange()" />
+  <ng-content></ng-content>
+</div>

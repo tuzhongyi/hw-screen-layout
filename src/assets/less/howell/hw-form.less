@@ -1,0 +1,41 @@
+.hw-form-base() {
+  display: flex;
+  padding: 10px;
+  color: #cfd7ff;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 20px 10px;
+
+  &-item {
+    min-height: 34px;
+    display: flex;
+    gap: 5px;
+
+    &-title {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    &-values {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: stretch
+    }
+  }
+}
+
+.hw-form {
+  .hw-form-base();
+}
+
+.hw-form-1 {
+  .hw-form-base();
+
+  .hw-form-item {
+    flex-direction: column;
+    width: 100%;
+  }
+}

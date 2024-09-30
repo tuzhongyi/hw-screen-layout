@@ -1,0 +1,78 @@
+<div class="screen-table table">
+  <div class="screen-table-body table-body">
+    <table
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      [ngStyle]="{
+      height: ((page.PageCount/ page.PageSize) * 100)  + '%',
+    }"
+    >
+      <thead>
+        <tr>
+          <td>名称</td>
+          <td>设备类型</td>
+          <td>设备型号</td>
+          <td>分辨率</td>
+          <td>旋转</td>
+          <td>布局名称</td>
+          <td>状态</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of datas"
+          (click)="onselect($event, item)"
+          [ngClass]="{
+            selected: item === selected
+          }"
+        >
+          <td>{{ item.Name }}</td>
+          <td>{{ item.DeviceType }}</td>
+          <td>{{ item.Model }}</td>
+          <td>{{ item.Resolution.Width }}*{{ item.Resolution.Height }}</td>
+          <td>{{ item.Rotation }}</td>
+          <td>{{ (item.Layout | async)?.Name }}</td>
+          <td>{{ item.State }}</td>
+          <td>
+            <div class="table-operation">
+              <div title="布局" (click)="onlayout($event, item)">
+                <i class="mdi mdi-view-dashboard"></i>
+              </div>
+              <div title="编辑" (click)="onupdate($event, item)">
+                <i class="howell-icon-modification"></i>
+              </div>
+              <div title="删除" (click)="ondelete($event, item)">
+                <i class="howell-icon-delete-bin"></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="screen-table table-foot" *ngIf="page">
+    <div class="table-foot-item">
+      <div class="table-foot-info">
+        <div class="table-foot-info-item">
+          当前数量: {{ page && page.RecordCount }}
+        </div>
+        <div class="table-foot-info-item">
+          总数量: {{ page && page.TotalRecordCount }}
+        </div>
+      </div>
+
+      <app-paginator
+        [length]="page.TotalRecordCount"
+        [pageSize]="page.PageSize"
+        [pagerCount]="5"
+        [pageIndex]="0"
+        [showFirstLastButtons]="true"
+        (page)="pageEvent($event)"
+      >
+      </app-paginator>
+    </div>
+  </div>
+</div>

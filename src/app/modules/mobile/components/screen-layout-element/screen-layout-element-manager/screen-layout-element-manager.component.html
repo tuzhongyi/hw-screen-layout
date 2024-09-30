@@ -1,0 +1,30 @@
+<div class="screen-layout-element-manager">
+  <div class="screen-layout-element-manager-head">
+    <div class="hw-simple-title">元素管理</div>
+  </div>
+  <div class="screen-layout-element-manager-body">
+    <div class="screen-layout-element-manager-body-settings">
+      <div class="hw-panel">
+        <mobile-screen-layout-element-types
+          [(selected)]="type"
+        ></mobile-screen-layout-element-types>
+      </div>
+      <div class="hw-panel">
+        <mobile-screen-layout-element-content-image-details
+          [data]="image"
+        ></mobile-screen-layout-element-content-image-details>
+      </div>
+    </div>
+    <div class="screen-layout-element-manager-body-preview">
+      <div class="hw-panel">
+        <mobile-screen-layout-element-content-image
+          [data]="image"
+        ></mobile-screen-layout-element-content-image>
+      </div>
+    </div>
+  </div>
+  <div class="screen-layout-element-manager-foot">
+    <button class="hw-green-btn"><i class="mdi mdi-check"></i> 确定</button>
+    <button class="hw-gray-btn"><i class="mdi mdi-close"></i> 取消</button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.color-control {
+  ::ng-deep {
+    .minicolors-theme-default {
+      &.minicolors {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        .minicolors-input {
+          height: 100%;
+          width: 100%;
+        }
+
+        .minicolors-swatch {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .minicolors-panel {
+          position: absolute;
+          top: 100%;
+        }
+      }
+
+    }
+  }
+}

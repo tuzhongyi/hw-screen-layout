@@ -1,0 +1,10 @@
+<div class="screen-layout-element-content-image">
+  <div
+    *ngIf="data"
+    class="screen-layout-element-content-image-body"
+    [ngStyle]="{
+      backgroundImage: data.Url | url
+    }"
+    [class]="data.ScaleType"
+  ></div>
+</div>

@@ -1,0 +1,35 @@
+.mat-sort-header-arrow {
+  color: white;
+
+}
+
+.mat-sort-header-stem {
+  display: none;
+}
+
+.asc {
+  .mat-sort-header-indicator {
+    transform: translateY(0px) !important;
+  }
+}
+
+.desc {
+  .mat-sort-header-indicator {
+    transform: translateY(4px) !important;
+  }
+}
+
+
+.mat-sort-header[aria-sort="descending"] {
+  .mat-sort-header-arrow {
+    transform: translateY(0px) !important;
+  }
+
+}
+
+.mat-sort-header[aria-sort="ascending"] {
+  .mat-sort-header-arrow {
+    transform: translateY(3px) !important
+  }
+
+}

@@ -1,0 +1,11 @@
+<div class="screen-layout-container">
+  <div class="screen-layout-container-grid">
+    <gridster [options]="options">
+      <ng-container *ngFor="let item of dashboard">
+        <gridster-item [item]="item">
+          <!-- your content here -->
+        </gridster-item>
+      </ng-container>
+    </gridster>
+  </div>
+</div>

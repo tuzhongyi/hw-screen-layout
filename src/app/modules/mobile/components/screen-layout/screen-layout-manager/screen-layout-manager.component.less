@@ -1,0 +1,40 @@
+.screen-layout-manager {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+
+  @foot-height: 34px;
+
+  @head-height: 30px;
+
+  &-head {
+    flex-grow: 0;
+  }
+
+
+  &-body {
+    flex-grow: 1;
+
+    width: 100%;
+    height: calc(100% - 40px - @foot-height - @head-height);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .hw-panel {
+      width: 20%;
+    }
+
+  }
+
+  &-foot {
+    flex-grow: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

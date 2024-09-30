@@ -1,0 +1,19 @@
+<div class="screen-layout-list">
+  <div class="screen-layout-list-head">
+    <div class="hw-simple-title">屏幕布局</div>
+    <div class="screen-layout-list-head-operation">
+      <div><i class="howell-icon-plus"></i> 添加</div>
+    </div>
+  </div>
+  <div class="screen-layout-list-body">
+    <ng-container *ngFor="let item of datas; let index = index">
+      <mobile-screen-layout-list-item
+        class="screen-layout-list-body-item"
+        [data]="item"
+        [index]="index"
+        [selected]="selected === item"
+        (click)="onselect(item)"
+      ></mobile-screen-layout-list-item>
+    </ng-container>
+  </div>
+</div>

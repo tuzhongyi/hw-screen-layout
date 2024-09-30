@@ -1,0 +1,10 @@
+<div class="color-control hw-input-button" (click)="onclick($event)">
+  <input
+    #input
+    type="text"
+    [value]="color"
+    (change)="onchange($event)"
+    data-minicolors
+  />
+  <ng-content></ng-content>
+</div>

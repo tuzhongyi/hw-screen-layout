@@ -1,0 +1,38 @@
+<div class="screen-manager">
+  <div class="screen-manager-head">
+    <div class="hw-second-title">智能屏</div>
+    <div class="screen-manager-head-operation">
+      <button class="hw-green-btn" (click)="oncreate()">
+        <i class="howell-icon-plus"></i> 添加
+      </button>
+    </div>
+  </div>
+  <div class="screen-manager-body">
+    <mobile-screen-table
+      [args]="args"
+      (update)="onupdate($event)"
+      (delete)="ondelete($event)"
+      (layout)="onlayout($event)"
+    ></mobile-screen-table>
+  </div>
+</div>
+
+<app-window
+  *ngIf="window.details.show"
+  [Model]="window.details"
+  [style]="window.details.style"
+>
+  <mobile-screen-details
+    [data]="window.details.data"
+    (cancel)="window.details.show = false"
+  ></mobile-screen-details>
+</app-window>
+<app-window
+  *ngIf="window.layout.show"
+  [Model]="window.layout"
+  [style]="window.layout.style"
+>
+  <mobile-screen-layout-manager
+    [screen]="window.layout.data"
+  ></mobile-screen-layout-manager>
+</app-window>
